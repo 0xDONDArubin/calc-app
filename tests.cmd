@@ -1,0 +1,2 @@
+dotnet test CalcAdminTests
+PAUSE
