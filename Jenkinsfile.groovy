@@ -7,5 +7,10 @@ pipeline {
                 bat "build.cmd"
             }
         }
+        stage('Test') {
+            steps {
+                bat "tests.cmd"
+            }
+        }
     }
 }
