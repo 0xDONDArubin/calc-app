@@ -18,7 +18,7 @@ pipeline {
                                  followSymlinks: false
                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
-                sh dir
+                sh "dir"
             }
         }
     }
