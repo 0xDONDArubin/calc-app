@@ -12,5 +12,10 @@ pipeline {
                 bat "tests.cmd"
             }
         }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: '', followSymlinks: false
+            }
+        }
     }
 }
