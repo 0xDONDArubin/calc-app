@@ -18,11 +18,7 @@ pipeline {
                                  followSymlinks: false
                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
-            }
-            post {
-                success {
-                    dir
-                }
+                dir
             }
         }
     }
