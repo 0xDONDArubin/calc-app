@@ -18,7 +18,7 @@ pipeline {
                                  followSymlinks: false
                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
-                rename archive.zip ${BUILD_NUMBER}.zip
+                ren archive.zip ${BUILD_NUMBER}.zip
             }
         }
     }
