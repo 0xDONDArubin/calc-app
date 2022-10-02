@@ -14,9 +14,9 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'CalcAdmin/bin/Debug/netcoreapp3.1/*${BUILD_NUMBER}.zip', 
+                archiveArtifacts artifacts: '${BUILD_NUMBER}/CalcAdmin/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
-                archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*${BUILD_NUMBER}.zip', 
+                archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
             }
         }
