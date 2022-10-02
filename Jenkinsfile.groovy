@@ -19,6 +19,11 @@ pipeline {
                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
             }
+            post {
+                success {
+                    ren archive.zip bbb.zip
+                }
+            }
         }
     }
 }
