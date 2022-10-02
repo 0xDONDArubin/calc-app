@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '', followSymlinks: false
+                archiveArtifacts artifacts: 'CalcAdmin\bin\Debug\netcoreapp3.1\*', followSymlinks: false
             }
         }
     }
