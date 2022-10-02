@@ -16,8 +16,6 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'CalcAdmin/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
-            }
-            steps {
                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
                                  followSymlinks: false
             }
