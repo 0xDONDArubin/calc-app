@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds'){
+                dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds\\CalcAdminBuilds'){
                     echo "Current build: ${BUILD_NUMBER}"
                     zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:\\Users\\Gigabyte\\.jenkins\\workspace\\Test2\\CalcAdmin\\bin\\Debug\\netcoreapp3.1'
                     archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
