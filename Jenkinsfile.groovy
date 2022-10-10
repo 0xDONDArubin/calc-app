@@ -14,9 +14,9 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                echo "Current build: ${BUILD_NUMBER}"
-//                 zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:/Users/Gigabyte/.jenkins/workspace/Test2/CalcAdmin/bin/Debug/netcoreapp3.1'
-// 				archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
+                echo "Current build: ${BUILD_NUMBER}",
+//                 zip zipFile: "${BUILD_NUMBER}.zip", archive: false, dir: 'C:/Users/Gigabyte/.jenkins/workspace/Test2/CalcAdmin/bin/Debug/netcoreapp3.1',
+                archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
               
 //                 archiveArtifacts artifacts: 'CalcAdmin/bin/Debug/netcoreapp3.1/*', 
 //                                  followSymlinks: false
