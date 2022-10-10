@@ -23,7 +23,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds'){
-                    unzip zipFile: "${BUILD_NUMBER}.zip", dir: 'C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\deploy'
+                    bat('mkdir ..\\deploy\\'${BUILD_NUMBER}'')
+                    unzip zipFile: "${BUILD_NUMBER}.zip", dir: 'C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\deploy\\'${BUILD_NUMBER}''
                 }
             }
         }
