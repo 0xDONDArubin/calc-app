@@ -16,7 +16,7 @@ namespace CalcAdminTests
 
             var res = calc.Sum(a, b);
 
-            Assert.IsTrue(res == a - b);
+            Assert.IsTrue(res == a + b);
         }
 
         [TestMethod]
@@ -54,29 +54,5 @@ namespace CalcAdminTests
 
             Assert.IsTrue(res == a / b);
         }
-
-
-
-        /*[TestMethod]
-        public void SumNegativeNumbersTest()
-        {
-            double a = -7;
-            double b = -6;
-            var calc = new CalcApp();
-
-            double res = calc.SumNegativeNumbers(a, b);
-
-            Assert.IsTrue(res == a + b);
-        }
-
-        [TestMethod]
-        public void SumNegativeNumbersPositiveTest()
-        {
-            double a = 7;
-            double b = 6;
-            var calc = new CalcApp();
-
-            Assert.ThrowsException<ArgumentException>(() => calc.SumNegativeNumbers(a, b));
-        }*/
     }
 }
