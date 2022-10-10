@@ -15,7 +15,7 @@ pipeline {
         stage('Archive') {
             steps {
                 dir('C:\\'){
-                    zip zipFile: "${BUILD_ID}.zip", dir: 'Users\\Gigabyte\\.jenkins\\workspace\\Test2\\CalcAdmin\\bin\\Debug\\netcoreapp3.1'
+                    zip zipFile: "111.zip", dir: 'Users\\Gigabyte\\.jenkins\\workspace\\Test2\\CalcAdmin\\bin\\Debug\\netcoreapp3.1'
                 }
                 
 //                 archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
