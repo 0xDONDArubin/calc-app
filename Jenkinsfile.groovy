@@ -14,11 +14,15 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'CalcAdmin/bin/Debug/netcoreapp3.1/*', 
-                                 followSymlinks: false
-                archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
-                                 followSymlinks: false
-                echo "${BUILD_ID}"
+                echo "Current build: ${BUILD_NUMBER}"
+                zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:\Users\Gigabyte\.jenkins\workspace\Test2\CalcAdmin\bin\Debug\netcoreapp3.1'
+				archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
+              
+//                 archiveArtifacts artifacts: 'CalcAdmin/bin/Debug/netcoreapp3.1/*', 
+//                                  followSymlinks: false
+//                 archiveArtifacts artifacts: 'CalcAdminTests/bin/Debug/netcoreapp3.1/*', 
+//                                  followSymlinks: false
+//                 echo "${BUILD_ID}"
             }
         }
     }
