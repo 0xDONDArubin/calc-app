@@ -7,11 +7,13 @@ pipeline {
                 bat "build.cmd"
             }
         }
+        
         stage('Test') {
             steps {
                 bat "tests.cmd"
             }
         }
+        
         stage('Archive') {
             steps {
                 dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds'){
@@ -20,6 +22,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Deploy') {
             steps {
                 dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds'){
@@ -29,6 +32,7 @@ pipeline {
             }
         }
     }
+    
     post {
             always{
                emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:''', 
