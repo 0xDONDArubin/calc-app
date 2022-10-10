@@ -14,19 +14,24 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds\\CalcAdminBuilds'){
-                    echo "Current build: ${BUILD_NUMBER}"
+                dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\builds'){
                     zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:\\Users\\Gigabyte\\.jenkins\\workspace\\Test2\\CalcAdmin\\bin\\Debug\\netcoreapp3.1'
                     archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
                 }
             }
         }
-        
+        stage('Deploy') {
+            steps {
+                dir('C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\deploy'){
+                    unzip zipFile: "${BUILD_NUMBER}.zip", dir: 'C:\\Users\\Gigabyte\\Desktop\\Programs\\ConsoleApp\\CalcAdmin\\deploy'
+                }
+            }
+        }
     }
     post {
             always{
-               emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
-                Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!',
+               emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:''', 
+                    subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!',
                     to: 'dondarubin@gmail.com'
             }
         }
