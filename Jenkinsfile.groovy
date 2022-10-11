@@ -35,8 +35,8 @@ pipeline {
     
     post {
         always{
-           emailext body: '''$PROJECT_NAME - Build № $BUILD_NUMBER - $BUILD_STATUS:''',
-                subject: '$PROJECT_NAME - Build № $BUILD_NUMBER - $BUILD_STATUS:',
+           emailext body: '''$PROJECT_NAME - Build $BUILD_NUMBER - $BUILD_STATUS:''',
+                subject: '$PROJECT_NAME - Build $BUILD_NUMBER - $BUILD_STATUS:',
                 to: 'dondarubin@gmail.com'
         }
     }
