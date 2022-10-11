@@ -16,7 +16,7 @@ namespace CalcAdminTests
 
             var res = calc.Sum(a, b);
 
-            Assert.IsTrue(res == a - b);
+            Assert.IsTrue(res == a + b);
         }
 
         [TestMethod]
