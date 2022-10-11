@@ -35,7 +35,7 @@ pipeline {
     
     post {
         always{
-           emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:''',
+           emailext attachLog: true, body: '''$PROJECT_NAME - Build № $BUILD_NUMBER - $BUILD_STATUS:''',
                 to: 'dondarubin@gmail.com'
         }
     }
